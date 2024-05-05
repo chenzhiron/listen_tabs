@@ -1,0 +1,29 @@
+{
+  "manifest_version": 2,
+  "name": "Tab URL Printer",
+  "version": "1.0",
+  "description": "Print all open tab URLs to the console",
+  "permissions": [
+    "tabs",
+    "storage"
+  ],
+  "background": {
+    "scripts": [
+      "background.js"
+    ],
+    "persistent": false 
+  },
+  "options_ui": {
+    "page": "options.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*/*"
+      ],
+      "js": [
+          "contentScript.js"
+      ]
+    }
+  ]
+}
